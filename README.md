@@ -26,7 +26,7 @@ You may also find this brief tut
 ## Step 1: `empty.s`
 
 Use the textbook to create an `empty.s` program that you will use with the debugger.
-You will want to add a Makefile so that when you run `make empty` the `empty` binary will be created from you `empty.S`
+You will want to add a Makefile so that when you run `make empty` the `empty` binary will be created from you `empty.s`
 source file.
 
 Note the following is are minimal commands you can use to assemble and link your code:
@@ -130,7 +130,7 @@ You will find a bash script named `q1test.sh` that you can use to test your solu
 You are encouraged to examine it to see how it works.
 
 
-## Question 2: `q2.gdb` and `q2.txt`
+## Question 2: `q2.gdb`
 
 Your next task is to execute an operation. In particular, you will have your computer count the number of bits that are set to 1 in the value of the RAX register and place the result in RBX.
 In this task, you will no longer use Gdb functionality to set the values of registers. Instead, you will "program" the computer to perform this operation. You will do that by writing an
@@ -150,10 +150,8 @@ You will need to have the CPU execute this instruction and then examine the regi
 by hand and then when you are convinced you know how things work write your `q2.gdb` file to automate things with a `q2` command.
 Again there is a testting script, `q2test.sh`, that you should use to test your solution.  
 
-Create a file called `q2.txt` and answer the following questions in it:
-1. How many test cases does q2test.sh have?
-2. What values does q2test.sh run `popcnt` on?  Please state you answer as binary, base 2, values.
-3. What should be the correct result for each test case? Please state you answer as base 10, decimal values.
+**Now answer questions on gradescope**
+
 
 
 ### Hints
@@ -223,7 +221,7 @@ With this in mind your `q2` gdb command should:
 
 You can test your `q2` command  by loading 'rax' ahead of running your `q2` coammdn and then examine the contents of `rbx` after to see if things look right.
 
-## Question 3: `q3.gdb` and `q3.txt`
+## Question 3: `q3.gdb`
 
 In this question we are going to put our new skills to the test with  bit of a puzzle.
 
@@ -236,9 +234,9 @@ The following is gdb ouput that this question will deal with.
 (gdb)
 ```
 
-### Step 0: Modify your `empty.S`
+### Step 0: Modify your `empty.s`
 
-1. First  modify  your `empty.S` so that it leaves enough space at `_start` for the 12 bytes.
+1. First  modify  your `empty.s` so that it leaves enough space at `_start` for the 12 bytes.
 2. Add the following two lines before your `.text` secion
 ```
        .data
@@ -254,47 +252,4 @@ The following is gdb ouput that this question will deal with.
 1. Create a `q3.gdb` and define a `q3` gdb command that places the 12 values at the locatin of `_start`
 2. Use `q3test.sh` to confirm that your q3.gdb is working correctly.
 
-### Step3: `q3.txt`
-
-Create a `q3.txt` in which you will answer several questions.  Use the following as a template for the contents of q3.txt.  Pleease copy the question text and then put you answer bellow the question.
-
-
-#### Q3.1:  Using Intel Assembly syntax what short assembly sequences does the 12 bytes correspond too?
-
-
-#### Q3.2:  For each instruction provide a comment that explains what it does?
-
-
-#### Q3.3:  What is the purpose of the two lines we added into empty.S?
-
-
-#### Q3.4: Assume that `rax=0xdeadbeefdeadbeef`, `rbx=0xfeedfacebadf00d`, `rip=_start` and that memory has been initialized by your `q3` gdb command.
-Answer the following assuming that two instruction steps are executed. All numeric values should be given in hex, base 16,  notation.
-1. What is the value of `rax`?
-
-
-2. What is the value of `rbx`?
-
-
-3. What is the value of `rip`?
-
-
-4. What are the 8 byte values at the following locations:
-  - `rip  + 0` :
-
-  - `rip  + 1` :
-
-  - `rip  + 2` :
-
-  - `rip  + 3` :
-
-  - `rip  + 4` :
-
-  - `rip  + 5` :
-
-  - `rip  + 6` :
-
-  - `rip  + 7` :
-
-
-
+### Step3: **Answer gradescope questions**
