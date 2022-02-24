@@ -1,0 +1,6 @@
+*~
+*.resbin
+*.o
+empty
+*.map
+*.lst
