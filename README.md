@@ -165,7 +165,7 @@ Again there is a testting script, `q2test.sh`, that you should use to test your 
 ### Hints
 One of your registers is the `rip` register. The current value of `rip` tells the processor what is the location in memory of the opcode bytes that you want it to execute. 
 As we did in the lecture you can use the following syntax to write a single byte value to a location in memory:
-`set ((char *)<address>)[0]=<value>`
+`set {unsigned char} (<address>)=<value>`
 
 Where `<address>` is the memory locaion you want to update and `value` is the single byte value you want to wrtie. 
 
@@ -245,14 +245,9 @@ The following is gdb ouput that this question will deal with.
 ### Step 0: Modify your `empty.s`
 
 1. First  modify  your `empty.s` so that it leaves enough space at `_start` for the 12 bytes.
-2. Add the following two lines before your `.text` secion
+2. add the following option to your linker command in your Makefile:
 ```
-       .data
-       .fill 16, 1, 0x0
-```
-3. add the following option to your compile line
-```
--Wl,--omagic
+--omagic
 ```
 
 ### Step 1: `q3.gdb` and testng with `q3test.sh`
