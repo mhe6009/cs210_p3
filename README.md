@@ -43,7 +43,7 @@ the tasks for this question might look like the following:
 
 ```
 empty: empty.o
-       ld -g empty -o empty
+       ld -g empty.o -o empty
        
 empty.o: empty.s
        as -g empty.s -o empty.o
