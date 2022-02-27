@@ -62,26 +62,34 @@ files have changed.
 ## Question 1: `q1.gdb`
 
 Start gdb and issue the following commands to explore how to set and print the contents of a register (use the help command to understand what is happening eg. help p and help x):
+Line 0: starts gdb and opens the empty ELF file
 
+Line 1: sets a breakpoint to ensure that when we start a process from the ELF file it stops immediately
+
+Line 2: starts a process from the ELF file so that we can start exploring the CPU and registers of the process
+
+Remaining lines (3-10) demonstrate using set and print to modify and examine registers
 ```
-$ gdb empty
-(gdb) set $rax = 0b00000001
-(gdb) p /x $rax 
-(gdb) p /u $rax
-(gdb) set $rbx = 0b00000010
-(gdb) p /x $rbx 
-(gdb) p /u $rbx
-(gdb) set $rcx = 0b00001100
-(gdb) p /x $rcx
-(gdb) p /u $rcx
-(gdb) set $rdx = 0b01100001
-(gdb) p /x $rdx
-(gdb) p /u $rdx
-(gdb) p /c $rdx
-(gdb) set $r8 = 0b01100010
-(gdb) p /x $r8
-(gdb) p /u $r8
-(gdb) p /c $r8
+00:$ gdb empty
+01:(gdb) b _start
+02:(gdb) run
+03:(gdb) set $rax = 0b00000001
+04:(gdb) p /x $rax 
+05:(gdb) p /u $rax
+06:(gdb) set $rbx = 0b00000010
+07:(gdb) p /x $rbx 
+08:(gdb) p /u $rbx
+09:(gdb) set $rcx = 0b00001100
+10:(gdb) p /x $rcx
+11:(gdb) p /u $rcx
+12:(gdb) set $rdx = 0b01100001
+13:(gdb) p /x $rdx
+14:(gdb) p /u $rdx
+15:(gdb) p /c $rdx
+16:(gdb) set $r8 = 0b01100010
+17:(gdb) p /x $r8
+18:(gdb) p /u $r8
+19:(gdb) p /c $r8
 ```
 
 After exploring the use of the gdb `set` command interactively with Gdb, use an editor create a file called `q1.gdb`
