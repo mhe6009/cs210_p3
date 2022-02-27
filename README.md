@@ -21,7 +21,7 @@ Purpose of this Problem Set.
 Beyond the textbook and lecture notes don't forget the manuals:
 - https://sourceware.org/gdb/current/onlinedocs/gdb/
 
-You may also find this brief tut
+See the brief Makefile tutorial below.
 
 ## Step 1: `empty.s`
 
